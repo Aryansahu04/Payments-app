@@ -96,3 +96,29 @@ Follow these steps to set up and run the project locally:
     ```
 
 After these steps, the user application should be accessible at `http://localhost:3000` (or your configured port). You can log in using the credentials provided in `packages/db/prisma/seed.ts` (e.g., phone: `1111111111`, password: `aryan`).
+
+## 🏦 Payment Flow (On-Ramp Simulation)
+
+1. User clicks **Add Money** → creates an `OnRampTransaction` in DB with status **Processing**  
+2. User is redirected to a simulated **Bank Page**  
+3. Bank (mocked via Express service) calls **webhook** to update transaction status  
+4. User’s **balance updates** & transaction marked **Success/Failure**  
+
+---
+
+## 📊 UI Preview  
+
+- **Appbar** with login/logout  
+- **Sidebar** navigation: Dashboard, Transactions, Transfer  
+- **Balance Card** showing unlocked & locked balance  
+- **Add Money Card** to simulate on-ramp transactions  
+- **Recent Transactions** panel  
+
+---
+
+## 📌 Future Enhancements  
+
+- 🔄 Real payment gateway integration (Stripe, Razorpay, PayPal)  
+- 📱 Mobile-first UI polish  
+- 🔔 Notifications for transactions (WebSockets/Push)  
+- 💳 P2P Transfers between users  
